@@ -26,7 +26,8 @@
   --color-warning-dark: var(--warning-dark);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
-  --shadow-map: 0 22px 70px rgb(0 48 73 / 0.58);
+  --shadow-map: 0 24px 70px rgb(0 48 73 / 0.64);
+  --shadow-card: 0 18px 44px rgb(0 48 73 / 0.38);
 }
 
 * {
@@ -36,19 +37,46 @@
 html {
   background: var(--paper);
   color: var(--ink);
+  color-scheme: dark;
   scroll-padding-top: 88px;
 }
 
 body {
   min-height: 100dvh;
   margin: 0;
+  overflow-x: hidden;
   background:
-    radial-gradient(circle at 8% 0%, rgb(193 18 31 / 0.2), transparent 28rem),
-    radial-gradient(circle at 92% 8%, rgb(102 155 188 / 0.22), transparent 34rem),
-    linear-gradient(180deg, #003049 0%, var(--paper) 38rem);
+    radial-gradient(circle at 8% -8%, rgb(102 155 188 / 0.18), transparent 30rem),
+    radial-gradient(circle at 92% 0%, rgb(193 18 31 / 0.12), transparent 28rem),
+    linear-gradient(180deg, rgb(0 48 73 / 1) 0%, rgb(0 48 73 / 1) 52rem, rgb(0 48 73 / 1) 100%);
   color: var(--ink);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(135deg, rgb(253 240 213 / 0.04) 0 1px, transparent 1px 24px),
+    linear-gradient(180deg, rgb(0 48 73 / 0), rgb(0 48 73 / 0.82));
+  opacity: 0.58;
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 18% 22%, rgb(102 155 188 / 0.11), transparent 24rem),
+    radial-gradient(circle at 80% 68%, rgb(253 240 213 / 0.06), transparent 30rem);
 }
 
 a {
@@ -63,7 +91,7 @@ a {
   z-index: 100;
   min-height: 44px;
   transform: translateY(-140%);
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--ink);
   padding: 12px 16px;
   color: var(--paper);
@@ -86,6 +114,16 @@ button {
   cursor: pointer;
 }
 
+button,
+a,
+select {
+  touch-action: manipulation;
+}
+
+select {
+  color-scheme: dark;
+}
+
 ul,
 ol {
   padding-left: 1.1rem;
@@ -103,16 +141,16 @@ li::marker {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
-  border-radius: 6px;
-  padding: 0 14px;
-  color: rgb(253 240 213 / 0.72);
-  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: rgb(253 240 213 / 0.64);
+  font-size: 0.84rem;
   font-weight: 700;
-  transition: background 160ms ease, color 160ms ease;
+  transition: background-color 180ms ease, color 180ms ease;
 }
 
 .nav-link:hover {
-  background: rgb(193 18 31 / 0.16);
+  background: rgb(102 155 188 / 0.12);
   color: var(--ink);
 }
 
@@ -128,18 +166,24 @@ li::marker {
   flex: 0 0 auto;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgb(102 155 188 / 0.38);
-  border-radius: 6px;
-  background: var(--paper);
+  border: 1px solid rgb(102 155 188 / 0.32);
+  border-radius: 8px;
+  background: rgb(0 48 73 / 0.72);
   padding: 0 12px;
   color: var(--ink);
   font-size: 0.85rem;
   font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.mobile-chip:hover {
+  border-color: rgb(102 155 188 / 0.58);
+  background: rgb(102 155 188 / 0.12);
 }
 
 .eyebrow {
   color: var(--channel);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -150,9 +194,9 @@ li::marker {
   min-height: 32px;
   align-items: center;
   gap: 6px;
-  border: 1px solid rgb(102 155 188 / 0.32);
-  border-radius: 6px;
-  background: rgb(0 48 73 / 0.86);
+  border: 1px solid rgb(102 155 188 / 0.28);
+  border-radius: 8px;
+  background: rgb(102 155 188 / 0.1);
   padding: 6px 10px;
   color: rgb(253 240 213 / 0.78);
   font-size: 0.78rem;
@@ -160,19 +204,95 @@ li::marker {
   line-height: 1.25;
 }
 
+.surface-card,
+.surface-panel {
+  border: 1px solid rgb(102 155 188 / 0.18);
+  background:
+    linear-gradient(180deg, rgb(102 155 188 / 0.12), transparent 10rem),
+    rgb(0 48 73 / 0.72);
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgb(253 240 213 / 0.04);
+}
+
+.surface-panel {
+  background:
+    linear-gradient(180deg, rgb(102 155 188 / 0.14), transparent 9rem),
+    rgb(0 48 73 / 0.86);
+}
+
+.surface-soft {
+  background:
+    linear-gradient(180deg, rgb(253 240 213 / 0.08), transparent 8rem),
+    rgb(0 48 73 / 0.64);
+}
+
+.surface-danger {
+  border-color: rgb(193 18 31 / 0.24);
+  background:
+    linear-gradient(180deg, rgb(193 18 31 / 0.12), transparent 9rem),
+    rgb(0 48 73 / 0.72);
+}
+
+.card-hover {
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgb(102 155 188 / 0.48);
+  box-shadow: 0 22px 58px rgb(0 48 73 / 0.52), inset 0 1px 0 rgb(253 240 213 / 0.06);
+}
+
+.field-label {
+  display: grid;
+  gap: 8px;
+  color: rgb(253 240 213 / 0.74);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.field-select {
+  min-height: 42px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgb(102 155 188 / 0.24);
+  background: rgb(0 48 73 / 0.8);
+  padding: 0 12px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgb(253 240 213 / 0.04);
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.field-select:hover {
+  border-color: rgb(102 155 188 / 0.5);
+  background: rgb(102 155 188 / 0.1);
+}
+
+.field-select:focus-visible {
+  border-color: var(--channel);
+  outline: 2px solid var(--channel);
+  outline-offset: 2px;
+}
+
 .bg-hero {
   background:
-    linear-gradient(90deg, rgb(102 155 188 / 0.2) 1px, transparent 1px),
-    linear-gradient(0deg, rgb(253 240 213 / 0.1) 1px, transparent 1px),
-    radial-gradient(circle at 76% 22%, rgb(193 18 31 / 0.42), transparent 18rem),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23003049'/%3E%3Cpath d='M735 0c-47 80-23 130-74 191-54 65-140 51-196 120-65 80-14 165-79 241-54 64-148 55-208 119-33 35-48 78-58 129h1080V0H735z' fill='%23669BBC' opacity='.38'/%3E%3Cpath d='M0 575c120-77 200-51 309-104 123-60 137-161 262-192 129-32 196 51 321 4 72-27 116-86 150-138v655H0V575z' fill='%23669BBC' opacity='.22'/%3E%3Cpath d='M820 91c69 36 101 87 95 151-6 67-50 100-42 161 10 73 83 96 80 160-2 49-48 86-93 111' fill='none' stroke='%23FDF0D5' stroke-width='4' stroke-linecap='round' opacity='.38'/%3E%3Cpath d='M166 646c74-42 136-61 205-61 76 0 122 26 190 16 82-12 115-66 183-72 46-5 89 14 130 48' fill='none' stroke='%23C1121F' stroke-width='6' stroke-linecap='round' opacity='.62'/%3E%3C/svg%3E");
+    linear-gradient(90deg, rgb(102 155 188 / 0.16) 1px, transparent 1px),
+    linear-gradient(0deg, rgb(253 240 213 / 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 76% 22%, rgb(193 18 31 / 0.24), transparent 18rem),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23003049'/%3E%3Cpath d='M735 0c-47 80-23 130-74 191-54 65-140 51-196 120-65 80-14 165-79 241-54 64-148 55-208 119-33 35-48 78-58 129h1080V0H735z' fill='%23669BBC' opacity='.3'/%3E%3Cpath d='M0 575c120-77 200-51 309-104 123-60 137-161 262-192 129-32 196 51 321 4 72-27 116-86 150-138v655H0V575z' fill='%23669BBC' opacity='.16'/%3E%3Cpath d='M820 91c69 36 101 87 95 151-6 67-50 100-42 161 10 73 83 96 80 160-2 49-48 86-93 111' fill='none' stroke='%23FDF0D5' stroke-width='4' stroke-linecap='round' opacity='.25'/%3E%3Cpath d='M166 646c74-42 136-61 205-61 76 0 122 26 190 16 82-12 115-66 183-72 46-5 89 14 130 48' fill='none' stroke='%23C1121F' stroke-width='6' stroke-linecap='round' opacity='.42'/%3E%3C/svg%3E");
   background-size: 56px 56px, 56px 56px, auto, cover;
   background-position: center;
 }
 
 .map-frame {
-  height: min(72dvh, 720px);
-  min-height: 520px;
+  height: min(68dvh, 640px);
+  min-height: 480px;
 }
 
 .leaflet-container {
@@ -183,10 +303,12 @@ li::marker {
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  border-radius: 8px;
-  background: var(--paper);
+  border-radius: 12px;
+  border: 1px solid rgb(102 155 188 / 0.38);
+  background:
+    linear-gradient(180deg, rgb(102 155 188 / 0.12), transparent),
+    var(--paper);
   color: var(--ink);
-  border: 1px solid rgb(102 155 188 / 0.42);
   box-shadow: 0 16px 48px rgb(0 48 73 / 0.72);
 }
 
@@ -205,7 +327,7 @@ li::marker {
 .map-marker,
 .marker-dot {
   display: inline-block;
-  border: 3px solid var(--ink);
+  border: 3px solid rgb(253 240 213 / 0.9);
   border-radius: 999px;
   box-shadow: 0 8px 24px rgb(0 48 73 / 0.78);
 }
@@ -221,23 +343,12 @@ li::marker {
   flex: 0 0 auto;
 }
 
-.marker-coast {
-  background: var(--channel);
-}
-
-.marker-lake {
-  background: var(--channel);
-}
-
-.marker-river {
-  background: var(--channel);
-}
-
-.marker-pier {
-  background: var(--channel);
-}
-
-.marker-put-and-take {
+.marker-coast,
+.marker-lake,
+.marker-river,
+.marker-pier,
+.marker-put-and-take,
+.marker-standard {
   background: var(--channel);
 }
 
@@ -250,8 +361,8 @@ li::marker {
 }
 
 .leaflet-control-zoom a {
-  background: var(--paper) !important;
-  border-color: rgb(102 155 188 / 0.5) !important;
+  background: rgb(0 48 73 / 0.9) !important;
+  border-color: rgb(102 155 188 / 0.42) !important;
   color: var(--ink) !important;
 }
 
@@ -260,7 +371,11 @@ li::marker {
   color: rgb(253 240 213 / 0.72) !important;
 }
 
-@media (max-width: 720px) {
+.leaflet-control-attribution a {
+  color: var(--ink) !important;
+}
+
+@media (max-width: 640px) {
   .map-frame {
     height: 62dvh;
     min-height: 420px;
@@ -272,8 +387,8 @@ li::marker {
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
   }
 }

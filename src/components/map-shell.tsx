@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 const MapClient = dynamic(() => import("@/components/map-client"), {
   ssr: false,
-  loading: () => <div className="map-frame flex items-center justify-center rounded-lg border border-ink/10 bg-paper text-sm font-semibold text-ink/60">Loading fishing map…</div>
+  loading: () => <div className="map-frame surface-panel flex items-center justify-center rounded-xl text-sm font-semibold text-ink/68">Loading Fishing Map…</div>
 });
 
 export function MapShell() {

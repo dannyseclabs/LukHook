@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Clock, Fish, MapPin, ShieldAlert, Waves } from "lucide-react";
 
 import { LegalNotice } from "@/components/legal-notice";
+import { Badge, ButtonLink, Card, Container, PageHeader, Section } from "@/components/ui";
 import { fishGuides, fishingSpots, getSpotById, slugify, waterTypeLabels } from "@/lib/fishing-data";
 
 export function generateStaticParams() {
@@ -30,29 +31,28 @@ export default async function SpotPage({ params }: { params: Promise<{ id: strin
 
   return (
     <main id="main-content">
-      <section className="border-b border-ink/10 bg-mist">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
-          <div>
-            <p className="eyebrow">Spot guide</p>
-            <h1 className="mt-3 font-display text-5xl font-semibold leading-tight text-ink">{spot.name}</h1>
-            <div className="mt-7 flex flex-wrap gap-2">
-              <span className="tag">
+      <Section className="border-b border-channel/16 pb-8">
+        <Container className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end">
+          <PageHeader kicker="Spot Guide" title={spot.name} description={`${spot.region} · ${waterTypeLabels[spot.type]} · ${spot.species.join(", ")}`} className="lg:block">
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Badge>
                 <MapPin className="size-3.5" aria-hidden="true" />
                 {spot.region}
-              </span>
-              <span className="tag">
+              </Badge>
+              <Badge>
                 <Waves className="size-3.5" aria-hidden="true" />
                 {waterTypeLabels[spot.type]}
-              </span>
-              <span className="tag">
+              </Badge>
+              <Badge>
                 <Clock className="size-3.5" aria-hidden="true" />
                 {spot.estimatedTime}
-              </span>
-              <span className="tag">{spot.difficulty}</span>
+              </Badge>
+              <Badge tone={spot.difficulty === "Advanced" ? "danger" : "default"}>{spot.difficulty}</Badge>
             </div>
-          </div>
-          <div className="rounded-lg border border-ink/10 bg-paper p-5 shadow-sm">
-            <h2 className="font-display text-2xl font-semibold text-ink">Targets</h2>
+          </PageHeader>
+
+          <Card>
+            <p className="eyebrow">Targets</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {spot.species.map((species) => {
                 const fishSlug = slugify(species);
@@ -65,70 +65,77 @@ export default async function SpotPage({ params }: { params: Promise<{ id: strin
                 );
 
                 return hasGuide ? (
-                  <Link key={species} href={`/fish/${fishSlug}`} className="tag transition hover:border-channel hover:text-channel">
+                  <Link key={species} href={`/fish/${fishSlug}`} className="tag transition-[background-color,border-color,color] duration-200 hover:border-channel/60 hover:bg-channel/14 hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel">
                     {content}
                   </Link>
                 ) : (
-                  <span key={species} className="tag">
-                    {content}
-                  </span>
+                  <Badge key={species}>{content}</Badge>
                 );
               })}
             </div>
             <p className="mt-5 text-sm leading-6 text-ink/68">Best months: {spot.bestMonths.join(", ")}</p>
+            <ButtonLink href={`/map?region=${encodeURIComponent(spot.region)}`} className="mt-5 w-full">
+              Open On Map
+            </ButtonLink>
+          </Card>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <InfoBlock title="Recommended Gear" items={spot.recommendedGear} />
+            <InfoBlock title="Tactics" items={spot.tactics} />
+            <InfoBlock title="Methods" items={spot.methods} />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-5 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <InfoBlock title="Recommended gear" items={spot.recommendedGear} />
-        <InfoBlock title="Tactics" items={spot.tactics} />
-        <InfoBlock title="Methods" items={spot.methods} />
-      </section>
+      <Section className="pt-0">
+        <Container className="grid gap-4 lg:grid-cols-2">
+          <Card className="surface-danger">
+            <div className="flex items-center gap-3">
+              <ShieldAlert className="size-5 text-copper" aria-hidden="true" />
+              <h2 className="font-display text-2xl font-semibold text-ink">Safety & Legal Notes</h2>
+            </div>
+            <ul className="mt-4 grid gap-2 text-sm leading-6 text-ink/72">
+              {[...spot.legalNotes, ...spot.safetyNotes].map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          </Card>
+          <Card>
+            <h2 className="font-display text-2xl font-semibold text-ink">Preparation Plan</h2>
+            <ol className="mt-4 grid gap-2 text-sm leading-6 text-ink/68">
+              <li>Check official licence and species rules for the exact date.</li>
+              <li>Confirm weather, wind direction and access before leaving.</li>
+              <li>Pack gear around the main method: {spot.methods.slice(0, 2).join(" or ")}.</li>
+              <li>Reserve {spot.estimatedTime} for fishing plus travel and rigging time.</li>
+            </ol>
+            <ButtonLink href="/map" className="mt-6">
+              Back To Map
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </ButtonLink>
+          </Card>
+        </Container>
+      </Section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div className="rounded-lg border border-warning/25 bg-warning/10 p-5">
-          <div className="flex items-center gap-3">
-            <ShieldAlert className="size-6 text-warning-dark" aria-hidden="true" />
-            <h2 className="font-display text-2xl font-semibold text-ink">Safety and legal notes</h2>
-          </div>
-          <ul className="mt-5 grid gap-3 text-sm leading-6 text-ink/72">
-            {[...spot.legalNotes, ...spot.safetyNotes].map((note) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="rounded-lg border border-ink/10 bg-paper p-5">
-          <h2 className="font-display text-2xl font-semibold text-ink">Preparation plan</h2>
-          <ol className="mt-5 grid gap-3 text-sm leading-6 text-ink/68">
-            <li>Check official licence and species rules for the exact date.</li>
-            <li>Confirm weather, wind direction and access before leaving.</li>
-            <li>Pack gear around the main method: {spot.methods.slice(0, 2).join(" or ")}.</li>
-            <li>Reserve {spot.estimatedTime} for fishing plus travel and rigging time.</li>
-          </ol>
-          <Link href="/map" className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-md bg-copper px-4 py-2 text-sm font-semibold text-ink transition hover:bg-copper-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel">
-            Back to map
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <Container className="pb-14">
         <LegalNotice />
-      </section>
+      </Container>
     </main>
   );
 }
 
 function InfoBlock({ title, items }: { title: string; items: string[] }) {
   return (
-    <section className="rounded-lg border border-ink/10 bg-paper p-5 shadow-sm">
+    <Card as="section" className="h-full">
       <h2 className="font-display text-2xl font-semibold text-ink">{title}</h2>
-      <ul className="mt-5 grid gap-3 text-sm leading-6 text-ink/68">
+      <ul className="mt-4 grid gap-2 text-sm leading-6 text-ink/68">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-    </section>
+    </Card>
   );
 }

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Clock, Fish, MapPinned, ShieldAlert, Target } from "lucide-react";
+import { ArrowRight, Clock, Fish, MapPinned, ShieldAlert, Target, Waves } from "lucide-react";
 
 import { LegalNotice } from "@/components/legal-notice";
 import { SpotList } from "@/components/spot-list";
+import { Badge, ButtonLink, Card, Container, PageHeader, Section } from "@/components/ui";
 import { fishGuides, getFishBySlug, spotsForFish } from "@/lib/fishing-data";
 
 export function generateStaticParams() {
@@ -33,90 +34,96 @@ export default async function FishPage({ params }: { params: Promise<{ slug: str
 
   return (
     <main id="main-content">
-      <section className="border-b border-ink/10 bg-mist">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
-          <div>
-            <p className="eyebrow">Fish guide</p>
-            <h1 className="mt-3 font-display text-5xl font-semibold leading-tight text-ink">{fish.name}</h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-ink/68">{fish.tagline}</p>
-            <div className="mt-7 flex flex-wrap gap-2">
+      <Section className="border-b border-channel/16 pb-8">
+        <Container className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end">
+          <PageHeader kicker="Fish Guide" title={fish.name} description={fish.tagline} className="lg:block">
+            <div className="mt-6 flex flex-wrap gap-2">
               {fish.bestMonths.map((month) => (
-                <span key={month} className="tag">{month}</span>
+                <Badge key={month} tone="accent">
+                  {month}
+                </Badge>
               ))}
             </div>
-          </div>
-          <div className="rounded-lg border border-ink/10 bg-paper p-5 shadow-sm">
-            <h2 className="font-display text-2xl font-semibold text-ink">Trip timing</h2>
+          </PageHeader>
+
+          <Card>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="eyebrow">Trip Timing</p>
+                <h2 className="mt-2 font-display text-2xl font-semibold text-ink">Best Windows</h2>
+              </div>
+              <Clock className="size-5 text-channel" aria-hidden="true" />
+            </div>
             <p className="mt-4 text-sm leading-6 text-ink/68">{fish.bestTimeOfDay}</p>
-            <Link href="/map" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-md bg-copper px-4 py-2 text-sm font-semibold text-ink transition hover:bg-copper-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel">
-              Find spots
+            <ButtonLink href={`/map?species=${encodeURIComponent(fish.name)}`} className="mt-5 w-full">
+              Find Spots
               <MapPinned className="size-4" aria-hidden="true" />
-            </Link>
+            </ButtonLink>
+          </Card>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <GuideBlock icon={MapPinned} title="Where to Find" items={fish.whereToFind} />
+            <GuideBlock icon={Target} title="Metric Gear Setup" items={fish.gear} />
+            <GuideBlock icon={Waves} title="Lures & Methods" items={fish.lures} />
+            <GuideBlock icon={Fish} title="Tactics" items={fish.tactics} />
+            <GuideBlock icon={Clock} title="Beginner Mistakes" items={fish.beginnerMistakes} />
+            <Card className="surface-danger">
+              <ShieldAlert className="size-5 text-copper" aria-hidden="true" />
+              <h2 className="mt-4 font-display text-2xl font-semibold text-ink">Legal Note</h2>
+              <p className="mt-4 text-sm leading-6 text-ink/72">{fish.legalNote}</p>
+            </Card>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-5 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <GuideBlock icon={MapPinned} title="Where to find" items={fish.whereToFind} />
-        <GuideBlock icon={Target} title="Gear and lures" items={[...fish.gear, ...fish.lures]} />
-        <GuideBlock icon={Fish} title="Tactics" items={fish.tactics} />
-      </section>
-
-      <section className="border-y border-ink/10 bg-paper">
-        <div className="mx-auto grid w-full max-w-7xl gap-5 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-lg border border-ink/10 bg-paper p-5">
-            <div className="flex items-center gap-3">
-              <Clock className="size-6 text-channel" aria-hidden="true" />
-              <h2 className="font-display text-2xl font-semibold text-ink">Beginner mistakes</h2>
+      <Section className="border-y border-channel/16 bg-channel/8">
+        <Container>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="eyebrow">Matching Spots</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-ink">Fishable water for {fish.name}</h2>
             </div>
-            <ul className="mt-5 grid gap-3 text-sm leading-6 text-ink/68">
-              {fish.beginnerMistakes.map((mistake) => (
-                <li key={mistake}>{mistake}</li>
-              ))}
-            </ul>
+            <ButtonLink href={`/map?species=${encodeURIComponent(fish.name)}`} variant="secondary">
+              View On Map
+            </ButtonLink>
           </div>
-          <div className="rounded-lg border border-warning/25 bg-warning/10 p-5">
-            <div className="flex items-center gap-3">
-              <ShieldAlert className="size-6 text-warning-dark" aria-hidden="true" />
-              <h2 className="font-display text-2xl font-semibold text-ink">Legal note</h2>
-            </div>
-            <p className="mt-5 text-sm leading-6 text-ink/72">{fish.legalNote}</p>
+          <div className="mt-6">
+            <SpotList spots={spots} />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="font-display text-3xl font-semibold text-ink">Matching spots</h2>
-        <div className="mt-6">
-          <SpotList spots={spots} />
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <Container className="py-8">
         <LegalNotice />
-        <div className="mt-8 flex flex-wrap gap-3">
-          {fishGuides.filter((item) => item.slug !== fish.slug).map((item) => (
-            <Link key={item.slug} href={`/fish/${item.slug}`} className="inline-flex min-h-11 items-center gap-2 rounded-md border border-ink/10 bg-paper px-4 py-2 text-sm font-semibold text-ink transition hover:border-channel/40 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel">
-              {item.name}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
-          ))}
+        <div className="mt-6 flex flex-wrap gap-3">
+          {fishGuides
+            .filter((item) => item.slug !== fish.slug)
+            .map((item) => (
+              <Link key={item.slug} href={`/fish/${item.slug}`} className="inline-flex min-h-10 items-center gap-2 rounded-md border border-channel/24 bg-paper/52 px-3 py-2 text-sm font-semibold text-ink transition-[background-color,border-color,color] duration-200 hover:border-channel/48 hover:bg-channel/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel">
+                {item.name}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+            ))}
         </div>
-      </section>
+      </Container>
     </main>
   );
 }
 
 function GuideBlock({ icon: Icon, title, items }: { icon: typeof MapPinned; title: string; items: string[] }) {
   return (
-    <section className="rounded-lg border border-ink/10 bg-paper p-5 shadow-sm">
-      <Icon className="size-6 text-channel" aria-hidden="true" />
-      <h2 className="mt-5 font-display text-2xl font-semibold text-ink">{title}</h2>
-      <ul className="mt-5 grid gap-3 text-sm leading-6 text-ink/68">
+    <Card as="section" className="h-full">
+      <Icon className="size-5 text-channel" aria-hidden="true" />
+      <h2 className="mt-4 font-display text-2xl font-semibold text-ink">{title}</h2>
+      <ul className="mt-4 grid gap-2 text-sm leading-6 text-ink/68">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-    </section>
+    </Card>
   );
 }

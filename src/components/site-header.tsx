@@ -2,21 +2,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { Anchor, Fish, MapPinned } from "lucide-react";
 
+import { ButtonLink, Container } from "@/components/ui";
 import { fishGuides, regions } from "@/lib/fishing-data";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/92 backdrop-blur-xl">
-      <div className="mx-auto flex min-h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-channel/16 bg-paper/86 shadow-[0_10px_36px_rgb(0_48_73_/_0.28)] backdrop-blur-xl">
+      <Container className="flex min-h-16 items-center justify-between gap-4 py-2.5">
         <Link href="/" className="group flex items-center gap-3" aria-label="LukHook home">
-          <Image src="/lukhook-mark.svg" alt="" width={44} height={44} priority className="size-11 rounded-lg shadow-map" />
+          <Image src="/lukhook-mark.svg" alt="" width={40} height={40} priority className="size-10 rounded-lg shadow-[0_10px_28px_rgb(0_48_73_/_0.42)]" />
           <span className="leading-tight">
             <span className="block font-display text-lg font-semibold text-ink">LukHook</span>
-            <span className="block text-xs font-medium uppercase tracking-normal text-ink/55">trip planner</span>
+            <span className="block text-xs font-semibold uppercase text-channel">Find the right water</span>
           </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+          <Link className="nav-link" href="/">
+            Home
+          </Link>
           <Link className="nav-link" href="/map">
             Map
           </Link>
@@ -28,12 +32,15 @@ export function SiteHeader() {
           </Link>
         </nav>
 
-        <Link href="/map" className="inline-flex min-h-11 items-center gap-2 rounded-md bg-copper px-4 py-2 text-sm font-semibold text-ink shadow-map transition hover:bg-copper-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel">
+        <ButtonLink href="/map" size="sm" className="hidden sm:inline-flex">
           <Fish className="size-4" aria-hidden="true" />
-          Explore map
-        </Link>
-      </div>
+          Explore Map
+        </ButtonLink>
+      </Container>
       <div className="flex gap-2 overflow-x-auto px-4 pb-3 md:hidden">
+        <Link className="mobile-chip" href="/">
+          Home
+        </Link>
         <Link className="mobile-chip" href="/map">
           <MapPinned className="size-4" aria-hidden="true" />
           Map

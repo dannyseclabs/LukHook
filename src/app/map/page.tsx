@@ -1,17 +1,29 @@
-import { MapShell } from "@/components/map-shell";
-import { SectionHeading } from "@/components/section-heading";
 import { LegalNotice } from "@/components/legal-notice";
+import { MapShell } from "@/components/map-shell";
+import { ButtonLink, Container, PageHeader, Section } from "@/components/ui";
 
 export default function MapPage() {
   return (
-    <main id="main-content" className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <SectionHeading kicker="Interactive map" title="Filter Danish fishing spots by the way you actually plan" description="Use species, region, water type, difficulty, season and method to narrow the map. Click a marker or a spot in the list for gear, tactics and legal notes." />
-      <div className="mt-8">
+    <main id="main-content">
+      <Section className="pb-6">
+        <Container>
+          <PageHeader
+            kicker="Interactive Map"
+            title="Filter Danish fishing water like a trip planner"
+            description="Use species, region, water type, difficulty, season and method to narrow the map. Click any marker or result for gear, tactics, timing and legal notes."
+          >
+            <ButtonLink href="/fish" variant="secondary">
+              Fish Guides
+            </ButtonLink>
+          </PageHeader>
+        </Container>
+      </Section>
+      <Container>
         <MapShell />
-      </div>
-      <div className="mt-8">
+      </Container>
+      <Container className="py-8">
         <LegalNotice />
-      </div>
+      </Container>
     </main>
   );
 }

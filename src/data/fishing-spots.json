@@ -10,7 +10,7 @@
     "difficulty": "Intermediate",
     "methods": ["spinning", "wading", "fly"],
     "recommendedGear": [
-      "9-10 ft spinning rod",
+      "2.7-3.0 m spinning rod",
       "2500-3000 spinning reel",
       "braided line",
       "coastal spoons",
@@ -43,7 +43,7 @@
     "difficulty": "Intermediate",
     "methods": ["bottom fishing", "jigging", "spinning"],
     "recommendedGear": [
-      "10-11 ft pier rod",
+      "3.0-3.3 m pier rod",
       "4000-5000 reel",
       "30-60 g jigs",
       "bottom rigs",
@@ -76,7 +76,7 @@
     "difficulty": "Advanced",
     "methods": ["spinning", "jerkbait", "softbait"],
     "recommendedGear": [
-      "7-8 ft heavy spinning rod",
+      "2.1-2.4 m heavy spinning rod",
       "4000 reel",
       "0.18-0.22 mm braid",
       "wire or fluorocarbon trace",
@@ -109,7 +109,7 @@
     "difficulty": "Intermediate",
     "methods": ["spinning", "wading", "bombarda"],
     "recommendedGear": [
-      "9 ft medium spinning rod",
+      "2.7 m medium spinning rod",
       "2500 reel",
       "14-22 g coastal lures",
       "bombarda float and flies",
@@ -142,7 +142,7 @@
     "difficulty": "Beginner",
     "methods": ["light spinning", "jigging"],
     "recommendedGear": [
-      "6-7 ft light spinning rod",
+      "1.8-2.1 m light spinning rod",
       "1000-2500 reel",
       "0.08-0.12 mm braid",
       "3-8 g jigheads",
@@ -175,7 +175,7 @@
     "difficulty": "Intermediate",
     "methods": ["spinning", "fly", "wading"],
     "recommendedGear": [
-      "9-10 ft coastal rod",
+      "2.7-3.0 m coastal rod",
       "2500-3000 reel",
       "16-24 g slim spoons",
       "shrimp flies",
@@ -184,7 +184,7 @@
     "tactics": [
       "Target reefs, points and dark eelgrass patches",
       "Fish into wind when safe",
-      "Use long casts but fish the water at your feet first",
+      "Use long casts but fish the near water first",
       "Rotate through lure speed until fish react"
     ],
     "estimatedTime": "3-5 hours",
@@ -208,7 +208,7 @@
     "difficulty": "Intermediate",
     "methods": ["bottom fishing", "spinning"],
     "recommendedGear": [
-      "10-12 ft surf rod",
+      "3.0-3.6 m surf rod",
       "5000 reel",
       "two-hook flatfish rigs",
       "60-100 g sinkers",
@@ -241,7 +241,7 @@
     "difficulty": "Advanced",
     "methods": ["spinning", "fly", "wading"],
     "recommendedGear": [
-      "9-10 ft coastal rod",
+      "2.7-3.0 m coastal rod",
       "3000 reel",
       "abrasion-resistant leader",
       "coastal spoons and wobblers",
@@ -274,7 +274,7 @@
     "difficulty": "Beginner",
     "methods": ["light spinning", "softbait", "drop shot"],
     "recommendedGear": [
-      "7 ft light-medium rod",
+      "2.1 m light-medium rod",
       "2500 reel",
       "0.10 mm braid",
       "5-12 g jigheads",
@@ -340,7 +340,7 @@
     "difficulty": "Beginner",
     "methods": ["bottom fishing", "jigging"],
     "recommendedGear": [
-      "10 ft pier rod",
+      "3.0 m pier rod",
       "4000 reel",
       "flatfish rigs",
       "40-80 g sinkers",
@@ -373,7 +373,7 @@
     "difficulty": "Beginner",
     "methods": ["bait fishing", "light spinning", "bombarda"],
     "recommendedGear": [
-      "6-8 ft light rod",
+      "1.8-2.4 m light rod",
       "1000-2500 reel",
       "small spinners",
       "powerbait or natural bait where allowed",

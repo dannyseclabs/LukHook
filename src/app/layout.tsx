@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 
 import { SiteHeader } from "@/components/site-header";
@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     icon: "/lukhook-mark-plain.svg",
     apple: "/lukhook-mark-plain.svg"
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: "#003049",
+  colorScheme: "dark"
 };
 
 export default function RootLayout({
