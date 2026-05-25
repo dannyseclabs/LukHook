@@ -1,0 +1,398 @@
+[
+  {
+    "id": "fyn-sea-trout-coast-01",
+    "name": "Funen Coastal Sea Trout Spot",
+    "region": "Funen",
+    "type": "coast",
+    "coordinates": [55.3, 10.4],
+    "species": ["Sea trout", "Garfish", "Flatfish"],
+    "bestMonths": ["March", "April", "May", "September", "October"],
+    "difficulty": "Intermediate",
+    "methods": ["spinning", "wading", "fly"],
+    "recommendedGear": [
+      "9-10 ft spinning rod",
+      "2500-3000 spinning reel",
+      "braided line",
+      "coastal spoons",
+      "waders"
+    ],
+    "tactics": [
+      "Cover water slowly",
+      "Look for eelgrass, stones and current",
+      "Fish early morning or evening",
+      "Move often if there is no activity"
+    ],
+    "estimatedTime": "2-4 hours",
+    "legalNotes": [
+      "Check current minimum size and closed season before fishing",
+      "Angling licence is normally required for rod fishing in Danish waters"
+    ],
+    "safetyNotes": [
+      "Use a wading belt and watch changing wind",
+      "Avoid fishing near stream outlets during protection periods"
+    ]
+  },
+  {
+    "id": "north-jutland-skagen-pier-01",
+    "name": "Skagen Pier and Outer Coast",
+    "region": "North Jutland",
+    "type": "pier",
+    "coordinates": [57.7209, 10.5839],
+    "species": ["Cod", "Flatfish", "Mackerel", "Garfish"],
+    "bestMonths": ["May", "June", "July", "August", "September", "October"],
+    "difficulty": "Intermediate",
+    "methods": ["bottom fishing", "jigging", "spinning"],
+    "recommendedGear": [
+      "10-11 ft pier rod",
+      "4000-5000 reel",
+      "30-60 g jigs",
+      "bottom rigs",
+      "sandworm or fish strips"
+    ],
+    "tactics": [
+      "Fish tidal movement and rougher weather edges",
+      "Use bottom rigs for flatfish on sand patches",
+      "Jig close to structure for cod when rules allow",
+      "Keep spare tackle for snags"
+    ],
+    "estimatedTime": "3-5 hours",
+    "legalNotes": [
+      "Cod rules can change quickly; verify current retention limits",
+      "Respect harbour signs and restricted working areas"
+    ],
+    "safetyNotes": [
+      "Wear non-slip footwear on wet pier stones",
+      "Do not fish exposed breakwaters in heavy swell"
+    ]
+  },
+  {
+    "id": "west-jutland-ringkobing-pike-01",
+    "name": "Ringkøbing Fjord Brackish Pike Water",
+    "region": "West Jutland",
+    "type": "lake",
+    "coordinates": [56.0, 8.2],
+    "species": ["Pike", "Perch"],
+    "bestMonths": ["May", "June", "September", "October", "November"],
+    "difficulty": "Advanced",
+    "methods": ["spinning", "jerkbait", "softbait"],
+    "recommendedGear": [
+      "7-8 ft heavy spinning rod",
+      "4000 reel",
+      "0.18-0.22 mm braid",
+      "wire or fluorocarbon trace",
+      "large jerkbaits and paddle tails"
+    ],
+    "tactics": [
+      "Search shallow reed edges in spring and autumn",
+      "Use slow retrieves over weed beds",
+      "Pause big lures beside drop-offs",
+      "Handle fish quickly and release large pike carefully"
+    ],
+    "estimatedTime": "4-6 hours",
+    "legalNotes": [
+      "Pike can have closed seasons; check local and national rules",
+      "Freshwater or brackish access may require local permission"
+    ],
+    "safetyNotes": [
+      "Wind can rise fast on open fjord water",
+      "Use pliers and a landing net for safe handling"
+    ]
+  },
+  {
+    "id": "east-jutland-vejle-fjord-01",
+    "name": "Vejle Fjord Mixed Coast",
+    "region": "East Jutland",
+    "type": "coast",
+    "coordinates": [55.7126, 9.6457],
+    "species": ["Sea trout", "Garfish", "Flatfish"],
+    "bestMonths": ["March", "April", "May", "September", "October", "November"],
+    "difficulty": "Intermediate",
+    "methods": ["spinning", "wading", "bombarda"],
+    "recommendedGear": [
+      "9 ft medium spinning rod",
+      "2500 reel",
+      "14-22 g coastal lures",
+      "bombarda float and flies",
+      "polarized glasses"
+    ],
+    "tactics": [
+      "Fish points and current seams",
+      "Cover both shallow and knee-deep water before wading out",
+      "Use smaller lures in clear water",
+      "Change location after 30-40 minutes without signs"
+    ],
+    "estimatedTime": "2-5 hours",
+    "legalNotes": [
+      "Check fjord-specific sea trout protection zones",
+      "Some stream outlets have seasonal or year-round closures"
+    ],
+    "safetyNotes": [
+      "Soft bottom areas can be tiring to wade",
+      "Keep distance from private shore access"
+    ]
+  },
+  {
+    "id": "copenhagen-harbour-perch-01",
+    "name": "Copenhagen Harbour Light Spinning",
+    "region": "Copenhagen area",
+    "type": "pier",
+    "coordinates": [55.6761, 12.593],
+    "species": ["Perch", "Cod", "Garfish"],
+    "bestMonths": ["May", "June", "July", "August", "September"],
+    "difficulty": "Beginner",
+    "methods": ["light spinning", "jigging"],
+    "recommendedGear": [
+      "6-7 ft light spinning rod",
+      "1000-2500 reel",
+      "0.08-0.12 mm braid",
+      "3-8 g jigheads",
+      "small paddletails and creature baits"
+    ],
+    "tactics": [
+      "Cast along walls, ladders and shadow lines",
+      "Let jigs touch bottom before short hops",
+      "Downsize if fish follow without taking",
+      "Fish mornings before boat traffic increases"
+    ],
+    "estimatedTime": "1-3 hours",
+    "legalNotes": [
+      "Harbour zones can be restricted; check local signs before fishing",
+      "Do not fish where swimming, port operations or access signs prohibit it"
+    ],
+    "safetyNotes": [
+      "Keep clear of cyclists and pedestrians while casting",
+      "Use a landing net for high quay walls"
+    ]
+  },
+  {
+    "id": "zealand-isefjord-seatrout-01",
+    "name": "Isefjord Sea Trout and Garfish Shore",
+    "region": "Zealand",
+    "type": "coast",
+    "coordinates": [55.785, 11.79],
+    "species": ["Sea trout", "Garfish", "Flatfish"],
+    "bestMonths": ["March", "April", "May", "October", "November"],
+    "difficulty": "Intermediate",
+    "methods": ["spinning", "fly", "wading"],
+    "recommendedGear": [
+      "9-10 ft coastal rod",
+      "2500-3000 reel",
+      "16-24 g slim spoons",
+      "shrimp flies",
+      "breathable waders"
+    ],
+    "tactics": [
+      "Target reefs, points and dark eelgrass patches",
+      "Fish into wind when safe",
+      "Use long casts but fish the water at your feet first",
+      "Rotate through lure speed until fish react"
+    ],
+    "estimatedTime": "3-5 hours",
+    "legalNotes": [
+      "Check current sea trout rules and stream-mouth closures",
+      "A state angling licence is normally needed for adults"
+    ],
+    "safetyNotes": [
+      "Cold water demands layered clothing in spring and autumn",
+      "Avoid walking through nesting bird areas"
+    ]
+  },
+  {
+    "id": "south-zealand-mon-cliffs-01",
+    "name": "Møn Chalk Coast Flatfish Run",
+    "region": "South Zealand / Møn",
+    "type": "coast",
+    "coordinates": [54.9667, 12.55],
+    "species": ["Flatfish", "Sea trout", "Garfish"],
+    "bestMonths": ["April", "May", "June", "September", "October"],
+    "difficulty": "Intermediate",
+    "methods": ["bottom fishing", "spinning"],
+    "recommendedGear": [
+      "10-12 ft surf rod",
+      "5000 reel",
+      "two-hook flatfish rigs",
+      "60-100 g sinkers",
+      "sandworm or ragworm"
+    ],
+    "tactics": [
+      "Cast to clean sand between weed belts",
+      "Keep rigs moving slightly to attract flatfish",
+      "Fish two rods only where allowed and manageable",
+      "Try sea trout lures during low-light windows"
+    ],
+    "estimatedTime": "3-6 hours",
+    "legalNotes": [
+      "Check local access rules near cliffs and protected nature",
+      "Minimum sizes and protected species rules must be checked before keeping fish"
+    ],
+    "safetyNotes": [
+      "Stay away from cliff fall zones",
+      "Plan the walk back before darkness"
+    ]
+  },
+  {
+    "id": "bornholm-rock-coast-01",
+    "name": "Bornholm Rocky Sea Trout Coast",
+    "region": "Bornholm",
+    "type": "coast",
+    "coordinates": [55.105, 14.79],
+    "species": ["Sea trout", "Cod", "Garfish"],
+    "bestMonths": ["March", "April", "May", "September", "October"],
+    "difficulty": "Advanced",
+    "methods": ["spinning", "fly", "wading"],
+    "recommendedGear": [
+      "9-10 ft coastal rod",
+      "3000 reel",
+      "abrasion-resistant leader",
+      "coastal spoons and wobblers",
+      "studded boots"
+    ],
+    "tactics": [
+      "Fish boulder fields and white-water edges",
+      "Use shorter accurate casts around rocks",
+      "Keep lure high over snaggy bottom",
+      "Change spot with wind direction"
+    ],
+    "estimatedTime": "3-5 hours",
+    "legalNotes": [
+      "Bornholm can have stricter sea trout closed-season windows",
+      "Verify current rules before targeting or retaining trout"
+    ],
+    "safetyNotes": [
+      "Rock shelves become slippery in spray",
+      "Do not wade alone in swell"
+    ]
+  },
+  {
+    "id": "north-jutland-limfjord-perch-01",
+    "name": "Limfjord Perch and Pike Edges",
+    "region": "North Jutland",
+    "type": "river",
+    "coordinates": [56.99, 9.21],
+    "species": ["Perch", "Pike", "Sea trout"],
+    "bestMonths": ["May", "June", "August", "September", "October"],
+    "difficulty": "Beginner",
+    "methods": ["light spinning", "softbait", "drop shot"],
+    "recommendedGear": [
+      "7 ft light-medium rod",
+      "2500 reel",
+      "0.10 mm braid",
+      "5-12 g jigheads",
+      "small shads and metal jigs"
+    ],
+    "tactics": [
+      "Fish current breaks and harbour mouths",
+      "Use small lures until you locate perch schools",
+      "Step up leader strength if pike are present",
+      "Return undersized fish quickly"
+    ],
+    "estimatedTime": "2-4 hours",
+    "legalNotes": [
+      "Some freshwater stretches require local permits",
+      "Check species-specific closed seasons in connected waters"
+    ],
+    "safetyNotes": [
+      "Watch boat traffic in narrow channels",
+      "Keep tackle boxes closed in windy conditions"
+    ]
+  },
+  {
+    "id": "east-jutland-silkeborg-lakes-01",
+    "name": "Silkeborg Lakes Pike and Perch",
+    "region": "East Jutland",
+    "type": "lake",
+    "coordinates": [56.1697, 9.5451],
+    "species": ["Pike", "Perch"],
+    "bestMonths": ["May", "June", "September", "October"],
+    "difficulty": "Intermediate",
+    "methods": ["spinning", "jerkbait", "drop shot"],
+    "recommendedGear": [
+      "Two setups: light perch and heavier pike",
+      "Wire traces for pike",
+      "Small jigs for perch",
+      "Large softbaits for weed edges",
+      "forceps and unhooking mat"
+    ],
+    "tactics": [
+      "Start near weed beds and reed points",
+      "Fish perch vertically near depth changes",
+      "Use slow pike retrieves in cold water",
+      "Handle big fish in the water where possible"
+    ],
+    "estimatedTime": "4-7 hours",
+    "legalNotes": [
+      "Lake fishing often needs a local fishing card in addition to state licence",
+      "Respect association rules, bag limits and protected zones"
+    ],
+    "safetyNotes": [
+      "Wear a life jacket from boat or kayak",
+      "Weather changes fast on connected lakes"
+    ]
+  },
+  {
+    "id": "west-jutland-thorsminde-flatfish-01",
+    "name": "Thorsminde Harbour Flatfish and Cod",
+    "region": "West Jutland",
+    "type": "pier",
+    "coordinates": [56.373, 8.123],
+    "species": ["Flatfish", "Cod", "Mackerel"],
+    "bestMonths": ["June", "July", "August", "September", "October"],
+    "difficulty": "Beginner",
+    "methods": ["bottom fishing", "jigging"],
+    "recommendedGear": [
+      "10 ft pier rod",
+      "4000 reel",
+      "flatfish rigs",
+      "40-80 g sinkers",
+      "bait elastic"
+    ],
+    "tactics": [
+      "Fish bottom rigs close to channels",
+      "Move until you find clean sand",
+      "Use small bait pieces for better hook-ups",
+      "Try metal jigs when baitfish are visible"
+    ],
+    "estimatedTime": "2-5 hours",
+    "legalNotes": [
+      "Harbour rules and cod retention rules must be checked on the day",
+      "Do not block working harbour areas"
+    ],
+    "safetyNotes": [
+      "North Sea wind can make casting difficult",
+      "Keep children away from quay edges"
+    ]
+  },
+  {
+    "id": "funen-put-take-family-01",
+    "name": "Funen Put and Take Starter Lake",
+    "region": "Funen",
+    "type": "put & take",
+    "coordinates": [55.42, 10.18],
+    "species": ["Rainbow trout", "Perch"],
+    "bestMonths": ["April", "May", "June", "September", "October"],
+    "difficulty": "Beginner",
+    "methods": ["bait fishing", "light spinning", "bombarda"],
+    "recommendedGear": [
+      "6-8 ft light rod",
+      "1000-2500 reel",
+      "small spinners",
+      "powerbait or natural bait where allowed",
+      "landing net"
+    ],
+    "tactics": [
+      "Ask the lake owner what was stocked recently",
+      "Fish around aerators and wind lanes",
+      "Use small hooks and adjust depth often",
+      "Keep only fish within lake rules"
+    ],
+    "estimatedTime": "2-4 hours",
+    "legalNotes": [
+      "Put and take lakes usually sell their own day ticket",
+      "State angling licence exemptions may apply; ask on location"
+    ],
+    "safetyNotes": [
+      "Ideal for beginners but still use eye protection while casting",
+      "Follow posted lake rules for bait and fish handling"
+    ]
+  }
+]
