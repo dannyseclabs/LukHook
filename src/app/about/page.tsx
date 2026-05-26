@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { BookOpen, CalendarDays, Compass, Fish, MapPinned, Mic, Newspaper, Quote, Waves } from "lucide-react";
 
 import { PhotoJournalCarousel } from "@/components/photo-journal-carousel";
@@ -57,7 +58,20 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="photo-placeholder coast tall" data-caption="Danish coast / working notes" role="img" aria-label="Atmospheric placeholder for Łukasz fishing on the Danish coast" />
+          <figure className="about-hero-photo">
+            <Image
+              src="/journal/lukasz-about-hero.jpeg"
+              alt="Łukasz Wojciechowski smiling with a large catch on the grass"
+              fill
+              priority
+              sizes="(min-width: 1024px) 42vw, 92vw"
+              className="object-cover"
+              style={{ objectPosition: "50% 48%" }}
+            />
+            <figcaption className="absolute inset-x-5 bottom-5 z-10 rounded-xl border border-white/24 bg-ink/48 px-4 py-3 text-sm font-semibold text-white/88 shadow-[0_18px_38px_rgb(16_36_62_/_0.18)] backdrop-blur-md">
+              Field archive / heavy catch day
+            </figcaption>
+          </figure>
         </Container>
       </Section>
 
