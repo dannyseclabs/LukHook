@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-channel/16 bg-hero">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(115deg,rgb(248_250_252_/_0.9),rgb(255_255_255_/_0.76)_48%,rgb(234_223_200_/_0.42))]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(115deg,rgb(247_247_245_/_0.9),rgb(255_255_255_/_0.76)_48%,rgb(231_220_203_/_0.42))]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-paper to-transparent" />
         <Container className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-end lg:py-20">
           <div className="max-w-3xl">

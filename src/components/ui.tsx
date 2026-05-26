@@ -9,7 +9,7 @@ const buttonBase =
   "inline-flex items-center justify-center gap-2 rounded-md font-semibold leading-none transition-[background-color,border-color,color,box-shadow,transform] duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel active:translate-y-px";
 
 const buttonVariants: Record<Variant, string> = {
-  primary: "border border-copper bg-copper text-white shadow-[0_14px_32px_rgb(180_35_24_/_0.18)] hover:border-copper-light hover:bg-copper-light hover:shadow-[0_18px_38px_rgb(180_35_24_/_0.22)]",
+  primary: "border border-copper bg-copper text-paper shadow-[0_10px_24px_rgb(166_61_47_/_0.14)] hover:border-copper-light hover:bg-copper-light hover:shadow-[0_14px_30px_rgb(140_50_39_/_0.18)]",
   secondary: "border border-channel/25 bg-white/76 text-ink shadow-[inset_0_1px_0_rgb(255_255_255_/_0.8)] hover:border-channel/45 hover:bg-white",
   ghost: "border border-transparent bg-transparent text-channel hover:bg-channel/10 hover:text-ink"
 };
@@ -120,7 +120,7 @@ export function SectionTitle({
 
 export function StatCard({ label, value, className }: { label: string; value: string | number; className?: string }) {
   return (
-    <div className={cn("rounded-xl border border-channel/16 bg-white/82 px-4 py-3 shadow-[0_12px_28px_rgb(11_34_57_/_0.06)]", className)}>
+    <div className={cn("rounded-xl border border-border-soft bg-white/82 px-4 py-3 shadow-[0_12px_28px_rgb(16_36_62_/_0.045)]", className)}>
       <p className="font-display text-2xl font-semibold leading-none text-ink tabular-nums">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase text-channel">{label}</p>
     </div>
