@@ -73,7 +73,7 @@ export function BlogExplorer({ posts }: { posts: JournalPost[] }) {
                 </Badge>
                 <Badge tone="accent">{featuredPost.region}</Badge>
               </div>
-              <p className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-copper">
+              <p className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-marine transition-colors group-hover:text-ink">
                 Read featured article
                 <ArrowRight className="size-4" aria-hidden="true" />
               </p>
@@ -164,7 +164,7 @@ export function BlogExplorer({ posts }: { posts: JournalPost[] }) {
                     </div>
                     <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-ink group-hover:text-channel">{post.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-ink/64">{post.excerpt}</p>
-                    <p className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-copper">
+                    <p className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-marine transition-colors group-hover:text-ink">
                       Read article
                       <ArrowRight className="size-4" aria-hidden="true" />
                     </p>

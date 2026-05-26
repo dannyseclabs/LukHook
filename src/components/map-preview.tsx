@@ -36,7 +36,7 @@ export function MapPreview({
       {markerPositions.slice(0, markerCount).map((position, index) => (
         <span
           key={position}
-          className={`absolute ${position} h-5 w-5 rounded-full border-[3px] border-white shadow-[0_10px_22px_rgb(16_36_62_/_0.18)] ${index % 3 === 0 ? "bg-copper" : "bg-channel"}`}
+          className={`absolute ${position} h-5 w-5 rounded-full border-[3px] border-white shadow-[0_10px_22px_rgb(16_36_62_/_0.18)] ${index % 3 === 0 ? "bg-marine" : "bg-channel"}`}
           aria-hidden="true"
         />
       ))}

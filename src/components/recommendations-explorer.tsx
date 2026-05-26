@@ -150,7 +150,7 @@ export function RecommendationsExplorer({ recommendations }: { recommendations: 
                       </span>
                     ))}
                   </div>
-                  <p className="mt-5 text-sm font-bold text-copper">View recommendation</p>
+                  <p className="mt-5 text-sm font-bold text-marine transition-colors group-hover:text-ink">View recommendation</p>
                 </div>
               </Card>
             </Link>

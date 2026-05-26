@@ -91,7 +91,7 @@ export default async function RecommendationPage({ params }: { params: Promise<{
 
               <Card>
                 <div className="flex items-center gap-3">
-                  <XCircle className="size-5 text-copper" aria-hidden="true" />
+                  <XCircle className="size-5 text-channel-dark" aria-hidden="true" />
                   <h2 className="font-display text-2xl font-semibold text-ink">Cons</h2>
                 </div>
                 <ul className="mt-4 grid gap-2 text-sm leading-6 text-ink/68">
@@ -117,7 +117,7 @@ export default async function RecommendationPage({ params }: { params: Promise<{
             </Card>
 
             <Card className="surface-danger">
-              <ShieldCheck className="size-5 text-copper" aria-hidden="true" />
+              <ShieldCheck className="size-5 text-channel-dark" aria-hidden="true" />
               <p className="mt-4 text-sm leading-6 text-ink/72">
                 Recommendations are personal and should be checked against your own fishing style, budget and local conditions.
               </p>
@@ -152,7 +152,7 @@ export default async function RecommendationPage({ params }: { params: Promise<{
                   <Badge>{item.category}</Badge>
                   <h3 className="mt-4 font-display text-xl font-semibold leading-tight text-ink group-hover:text-channel">{item.name}</h3>
                   <p className="mt-2 text-sm leading-6 text-ink/64">{item.shortDescription}</p>
-                  <p className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-copper">
+                  <p className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-marine transition-colors group-hover:text-ink">
                     View note
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </p>

@@ -6,6 +6,11 @@
   --ink: #10243E;
   --channel: #6B88A5;
   --channel-dark: #26415E;
+  --marine: #26415E;
+  --marine-hover: #1D334B;
+  --marine-active: #15283C;
+  --cream-soft: #F8F7F3;
+  --button-soft: #F3F5F7;
   --copper: #A63D2F;
   --copper-light: #8C3227;
   --warning: #A63D2F;
@@ -22,6 +27,11 @@
   --color-ink: var(--ink);
   --color-channel: var(--channel);
   --color-channel-dark: var(--channel-dark);
+  --color-marine: var(--marine);
+  --color-marine-hover: var(--marine-hover);
+  --color-marine-active: var(--marine-active);
+  --color-cream-soft: var(--cream-soft);
+  --color-button-soft: var(--button-soft);
   --color-copper: var(--copper);
   --color-copper-light: var(--copper-light);
   --color-warning: var(--warning);
@@ -302,7 +312,7 @@ li::marker {
   background:
     linear-gradient(180deg, rgb(16 36 62 / 0.06), rgb(16 36 62 / 0.44)),
     radial-gradient(circle at 28% 18%, rgb(231 220 203 / 0.76), transparent 10rem),
-    linear-gradient(135deg, rgb(247 247 245 / 0.8), rgb(166 61 47 / 0.32), rgb(107 136 165 / 0.6));
+    linear-gradient(135deg, rgb(247 247 245 / 0.8), rgb(231 220 203 / 0.42), rgb(107 136 165 / 0.6));
 }
 
 .about-hero-photo {
@@ -348,7 +358,7 @@ li::marker {
 }
 
 .journal-carousel-track:focus-visible {
-  outline: 3px solid rgb(166 61 47 / 0.28);
+  outline: 3px solid rgb(38 65 94 / 0.24);
   outline-offset: 4px;
 }
 
@@ -420,13 +430,13 @@ li::marker {
 
 .journal-arrow:hover:not(:disabled) {
   transform: translateY(-1px);
-  border-color: rgb(166 61 47 / 0.26);
-  background: var(--white);
-  color: var(--copper);
+  border-color: rgb(38 65 94 / 0.24);
+  background: var(--button-soft);
+  color: var(--marine);
 }
 
 .journal-arrow:focus-visible {
-  outline: 3px solid rgb(166 61 47 / 0.26);
+  outline: 3px solid rgb(38 65 94 / 0.24);
   outline-offset: 3px;
 }
 
@@ -463,7 +473,7 @@ li::marker {
   inset-block: 0;
   left: 0;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--copper-light), var(--copper));
+  background: linear-gradient(90deg, var(--marine-hover), var(--marine));
   transition: width 220ms ease;
 }
 
@@ -828,7 +838,7 @@ li::marker {
 }
 
 .leaflet-popup-content a {
-  color: var(--copper);
+  color: var(--marine);
   font-weight: 800;
 }
 

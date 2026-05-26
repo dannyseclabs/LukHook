@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <Badge>{item.category}</Badge>
                   <h3 className="mt-4 font-display text-xl font-semibold leading-tight text-ink group-hover:text-channel">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-ink/64">{item.excerpt}</p>
-                  <p className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-copper">
+                  <p className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-marine transition-colors group-hover:text-ink">
                     Read note
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </p>
