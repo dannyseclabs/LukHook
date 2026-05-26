@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Fish } from "lucide-react";
 
 import { Badge, Card, Container, PageHeader, Section } from "@/components/ui";
 import { fishGuides } from "@/lib/fishing-data";
+
+export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "Fish Guides for Denmark | LukHook",
+  description: "Choose Danish target species and get practical gear, tactics, timing, mistakes and legal notes."
+};
 
 export default function FishIndexPage() {
   return (

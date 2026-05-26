@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+
 import { LegalNotice } from "@/components/legal-notice";
 import { MapShell } from "@/components/map-shell";
 import { ButtonLink, Container, PageHeader, Section } from "@/components/ui";
+
+export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "Interactive Denmark Fishing Map | LukHook",
+  description: "Filter Denmark fishing spots by fish species, region, water type, difficulty, season and method."
+};
 
 export default function MapPage() {
   return (

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Meet Łukasz Wojciechowski, a Polish angler exploring Danish waters and helping Polish fishermen plan better trips abroad."
 };
 
+export const dynamic = "force-static";
+
 const achievements = [
   { label: "Biggest sea trout", value: "74 cm", Icon: Fish },
   { label: "Danish regions explored", value: "8", Icon: MapPinned },
@@ -63,7 +65,7 @@ export default function AboutPage() {
               src="/journal/lukasz-about-hero.jpeg"
               alt="Łukasz Wojciechowski smiling with a large catch on the grass"
               fill
-              priority
+              preload
               sizes="(min-width: 1024px) 42vw, 92vw"
               className="object-cover"
               style={{ objectPosition: "50% 48%" }}

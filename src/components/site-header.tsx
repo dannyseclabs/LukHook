@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Anchor, Fish, MapPinned, UserRound } from "lucide-react";
+import { Anchor, BookOpen, Fish, MapPinned, PackageCheck, UserRound } from "lucide-react";
 
 import { ButtonLink, Container } from "@/components/ui";
 import { fishGuides, regions } from "@/lib/fishing-data";
@@ -10,14 +10,14 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-channel/14 bg-white/82 shadow-[0_10px_34px_rgb(16_36_62_/_0.07)] backdrop-blur-xl">
       <Container className="flex min-h-16 items-center justify-between gap-4 py-2.5">
         <Link href="/" className="group flex items-center gap-3" aria-label="LukHook home">
-          <Image src="/lukhook-mark.svg" alt="" width={40} height={40} priority className="size-10 rounded-xl shadow-[0_10px_24px_rgb(16_36_62_/_0.1)]" />
+          <Image src="/lukhook-mark.svg" alt="" width={40} height={40} preload className="size-10 rounded-xl shadow-[0_10px_24px_rgb(16_36_62_/_0.1)]" />
           <span className="leading-tight">
             <span className="block font-display text-lg font-semibold text-ink">LukHook</span>
             <span className="block text-xs font-semibold uppercase text-channel">Danish water, Polish instinct</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
           <Link className="nav-link" href="/">
             Home
           </Link>
@@ -29,6 +29,12 @@ export function SiteHeader() {
           </Link>
           <Link className="nav-link" href={`/fish/${fishGuides[0].slug}`}>
             Fish guides
+          </Link>
+          <Link className="nav-link" href="/recommends">
+            Łukasz Recommends
+          </Link>
+          <Link className="nav-link" href="/blog">
+            Journal
           </Link>
           <Link className="nav-link" href="/about">
             About Łukasz
@@ -55,6 +61,14 @@ export function SiteHeader() {
         <Link className="mobile-chip" href={`/fish/${fishGuides[0].slug}`}>
           <Fish className="size-4" aria-hidden="true" />
           Fish
+        </Link>
+        <Link className="mobile-chip" href="/recommends">
+          <PackageCheck className="size-4" aria-hidden="true" />
+          Recommends
+        </Link>
+        <Link className="mobile-chip" href="/blog">
+          <BookOpen className="size-4" aria-hidden="true" />
+          Journal
         </Link>
         <Link className="mobile-chip" href="/about">
           <UserRound className="size-4" aria-hidden="true" />

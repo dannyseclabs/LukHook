@@ -8,6 +8,9 @@ import { SpotList } from "@/components/spot-list";
 import { Badge, ButtonLink, Card, Container, PageHeader, Section } from "@/components/ui";
 import { fishGuides, getFishBySlug, spotsForFish } from "@/lib/fishing-data";
 
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return fishGuides.map((fish) => ({ slug: fish.slug }));
 }
@@ -18,7 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: fish ? `${fish.name} Fishing in Denmark` : "Fish guide",
-    description: fish?.tagline
+    description: fish?.tagline,
+    alternates: fish ? { canonical: `/fish/${fish.slug}` } : undefined
   };
 }
 

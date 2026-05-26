@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Clock3, Compass, Fish, MapPinned, ShieldCheck, Waves } from "lucide-react";
 
 import { LegalNotice } from "@/components/legal-notice";
-import { MapShell } from "@/components/map-shell";
+import { MapPreview } from "@/components/map-preview";
 import { SpotList } from "@/components/spot-list";
 import { Badge, ButtonLink, Card, Container, Section, SectionTitle, StatCard } from "@/components/ui";
 import { fishGuides, fishingSpots, regions } from "@/lib/fishing-data";
+
+export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "LukHook | Denmark Fishing Map & Trip Planner",
+  description: "Plan Danish fishing trips with static fish guides, regions, spots, gear, tactics and legal reminders built for Polish anglers."
+};
 
 const heroStats = [
   { label: "Spots", value: fishingSpots.length },
@@ -79,7 +87,7 @@ export default function Home() {
               <StatCard key={stat.label} label={stat.label} value={stat.value} />
             ))}
           </div>
-          <MapShell />
+          <MapPreview />
         </Container>
       </Section>
 

@@ -7,6 +7,9 @@ import { LegalNotice } from "@/components/legal-notice";
 import { Badge, ButtonLink, Card, Container, PageHeader, Section } from "@/components/ui";
 import { fishGuides, fishingSpots, getSpotById, slugify, waterTypeLabels } from "@/lib/fishing-data";
 
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return fishingSpots.map((spot) => ({ id: spot.id }));
 }
@@ -17,7 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   return {
     title: spot ? `${spot.name} Fishing Guide` : "Fishing spot guide",
-    description: spot ? `${spot.region} ${waterTypeLabels[spot.type]} guide for ${spot.species.join(", ")}.` : undefined
+    description: spot ? `${spot.region} ${waterTypeLabels[spot.type]} guide for ${spot.species.join(", ")}.` : undefined,
+    alternates: spot ? { canonical: `/spots/${spot.id}` } : undefined
   };
 }
 

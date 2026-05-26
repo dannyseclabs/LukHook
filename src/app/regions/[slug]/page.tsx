@@ -4,10 +4,13 @@ import { notFound } from "next/navigation";
 import { ArrowRight, CloudSun, Fish, MapPinned, Waves } from "lucide-react";
 
 import { LegalNotice } from "@/components/legal-notice";
-import { MapShell } from "@/components/map-shell";
+import { MapPreview } from "@/components/map-preview";
 import { SpotList } from "@/components/spot-list";
 import { Badge, ButtonLink, Card, Container, PageHeader, Section } from "@/components/ui";
 import { getRegionBySlug, regions, spotsForRegion } from "@/lib/fishing-data";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return regions.map((region) => ({ slug: region.slug }));
@@ -19,7 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: region ? `${region.name} Fishing Guide` : "Region guide",
-    description: region?.summary
+    description: region?.summary,
+    alternates: region ? { canonical: `/regions/${region.slug}` } : undefined
   };
 }
 
@@ -80,7 +84,13 @@ export default async function RegionPage({ params }: { params: Promise<{ slug: s
               {spots.length} local spots
             </Badge>
           </div>
-          <MapShell />
+          <MapPreview
+            title={`Filter live spots for ${region.name}`}
+            description={`Open the dedicated map with ${region.name} already selected, then adjust fish, method, season and difficulty filters.`}
+            href={`/map?region=${encodeURIComponent(region.name)}`}
+            cta="Open Region Map"
+            markerCount={Math.min(6, Math.max(2, spots.length))}
+          />
         </Container>
       </Section>
 

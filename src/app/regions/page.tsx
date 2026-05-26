@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, MapPinned } from "lucide-react";
 
 import { Badge, Card, Container, PageHeader, Section } from "@/components/ui";
 import { regions } from "@/lib/fishing-data";
+
+export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "Denmark Fishing Regions | LukHook",
+  description: "Explore Danish fishing regions by water type, target fish, difficulty, weather exposure and legal checks."
+};
 
 export default function RegionsPage() {
   return (
