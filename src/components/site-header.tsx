@@ -7,13 +7,13 @@ import { fishGuides, regions } from "@/lib/fishing-data";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-channel/16 bg-paper/86 shadow-[0_10px_36px_rgb(0_48_73_/_0.28)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-channel/14 bg-white/82 shadow-[0_10px_34px_rgb(11_34_57_/_0.07)] backdrop-blur-xl">
       <Container className="flex min-h-16 items-center justify-between gap-4 py-2.5">
         <Link href="/" className="group flex items-center gap-3" aria-label="LukHook home">
-          <Image src="/lukhook-mark.svg" alt="" width={40} height={40} priority className="size-10 rounded-lg shadow-[0_10px_28px_rgb(0_48_73_/_0.42)]" />
+          <Image src="/lukhook-mark.svg" alt="" width={40} height={40} priority className="size-10 rounded-xl shadow-[0_10px_24px_rgb(11_34_57_/_0.1)]" />
           <span className="leading-tight">
             <span className="block font-display text-lg font-semibold text-ink">LukHook</span>
-            <span className="block text-xs font-semibold uppercase text-channel">Find the right water</span>
+            <span className="block text-xs font-semibold uppercase text-channel">Danish water, Polish instinct</span>
           </span>
         </Link>
 

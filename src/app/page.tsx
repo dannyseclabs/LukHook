@@ -18,19 +18,19 @@ export default function Home() {
   return (
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-channel/16 bg-hero">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(115deg,rgb(0_48_73_/_0.96),rgb(0_48_73_/_0.82)_48%,rgb(102_155_188_/_0.2))]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(115deg,rgb(248_250_252_/_0.9),rgb(255_255_255_/_0.76)_48%,rgb(234_223_200_/_0.42))]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-paper to-transparent" />
         <Container className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-end lg:py-20">
           <div className="max-w-3xl">
-            <Badge tone="accent" className="bg-paper/48">
+            <Badge tone="accent" className="bg-white/72">
               <Compass className="size-3.5" aria-hidden="true" />
-              Denmark Fishing Planner
+              Denmark planner for Polish anglers
             </Badge>
             <h1 className="mt-5 text-balance font-display text-5xl font-semibold leading-[1.02] text-ink sm:text-6xl">
               Plan your next fishing trip in Denmark
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/72 text-pretty">
-              A compact map-first tool for choosing water, target fish, gear, tactics, timing and legal checks before you leave home.
+              A calm, map-first travel tool for Polish fishermen choosing Danish water, target fish, gear, tactics, timing and legal checks before the road north.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/map" size="lg">
@@ -55,7 +55,7 @@ export default function Home() {
               {[
                 ["Choose Fish", "Target sea trout, pike, perch, cod or flatfish", Fish],
                 ["Choose Region", "Match wind, distance, water type and difficulty", Waves],
-                ["Get Plan", "Gear, tactics, prep time and legal reminders", ShieldCheck]
+                ["Get Plan", "Metric gear, tactics, prep time and legal reminders", ShieldCheck]
               ].map(([title, body, Icon]) => (
                 <div key={title as string} className="rounded-lg border border-channel/16 bg-channel/8 p-3">
                   <div className="flex items-start gap-3">

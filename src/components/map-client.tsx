@@ -137,7 +137,7 @@ function FilterControls({
                 onClick={() => onActiveSpotChange(spot.id)}
                 className={cn(
                   "rounded-lg border px-3 py-3 text-left transition-[background-color,border-color,box-shadow] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-channel",
-                  activeSpotId === spot.id ? "border-channel/55 bg-channel/14 shadow-[inset_0_1px_0_rgb(253_240_213_/_0.05)]" : "border-channel/16 bg-paper/48 hover:border-channel/42 hover:bg-channel/10"
+                  activeSpotId === spot.id ? "border-channel/55 bg-mist shadow-[inset_0_1px_0_rgb(255_255_255_/_0.85)]" : "border-channel/16 bg-white/72 hover:border-channel/42 hover:bg-mist"
                 )}
               >
                 <span className="block text-sm font-semibold leading-5 text-ink">{spot.name}</span>
@@ -145,7 +145,7 @@ function FilterControls({
               </button>
             ))
           ) : (
-            <div className="rounded-lg border border-channel/16 bg-paper/42 p-4">
+            <div className="rounded-lg border border-channel/16 bg-white/72 p-4">
               <p className="text-sm font-semibold text-ink">No Matching Spots</p>
               <p className="mt-1 text-xs leading-5 text-ink/62">Clear one filter or broaden the season.</p>
             </div>
@@ -267,7 +267,7 @@ export default function MapClient() {
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-channel/16 px-4 py-3 sm:px-5">
             <div>
               <p className="eyebrow">Denmark Map</p>
-              <h2 className="mt-1 font-display text-2xl font-semibold text-ink">Fishing Spots Console</h2>
+              <h2 className="mt-1 font-display text-2xl font-semibold text-ink">Fishing Water Map</h2>
             </div>
             <div className="flex flex-wrap gap-2">
               <Badge>

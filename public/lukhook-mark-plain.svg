@@ -1,16 +1,16 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">LukHook plain mark</title>
   <desc id="desc">Compact favicon-ready LukHook mark with Nordic fisherman and wave.</desc>
-  <rect width="512" height="512" rx="96" fill="#003049"/>
-  <path d="M124 336C170 306 218 302 267 323C320 346 373 335 414 299" stroke="#669BBC" stroke-width="26" stroke-linecap="round"/>
-  <path d="M111 386C163 357 216 360 265 382C319 406 377 394 421 356" stroke="#FDF0D5" stroke-width="14" stroke-linecap="round"/>
-  <path d="M174 196C194 128 246 91 307 101C365 111 397 162 392 226C386 303 336 361 269 369C207 377 164 330 165 263C166 239 169 217 174 196Z" fill="#FDF0D5"/>
-  <path d="M159 209C188 140 266 112 342 142C322 88 276 67 227 79C181 90 147 134 141 192C151 193 157 199 159 209Z" fill="#003049"/>
-  <path d="M141 219C170 150 231 121 294 126C256 99 197 108 162 155C140 185 132 229 141 270C143 248 143 231 141 219Z" fill="#669BBC"/>
-  <path d="M239 249C265 274 313 279 352 249C346 306 315 342 273 343C231 344 199 311 191 270C215 277 233 268 239 249Z" fill="#003049"/>
-  <path d="M218 194C249 169 302 168 342 192" stroke="#003049" stroke-width="15" stroke-linecap="round"/>
-  <path d="M177 177C201 104 268 69 341 94C315 56 260 43 212 67C174 88 148 131 140 187C154 179 166 176 177 177Z" fill="#669BBC"/>
-  <path d="M338 181C394 132 441 112 486 124" stroke="#FDF0D5" stroke-width="11" stroke-linecap="round"/>
-  <path d="M486 124C506 134 511 151 500 166" stroke="#FDF0D5" stroke-width="11" stroke-linecap="round"/>
-  <circle cx="338" cy="181" r="12" fill="#C1121F"/>
+  <rect width="512" height="512" rx="96" fill="#0B2239"/>
+  <path d="M124 336C170 306 218 302 267 323C320 346 373 335 414 299" stroke="#5B84B1" stroke-width="26" stroke-linecap="round"/>
+  <path d="M111 386C163 357 216 360 265 382C319 406 377 394 421 356" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+  <path d="M174 196C194 128 246 91 307 101C365 111 397 162 392 226C386 303 336 361 269 369C207 377 164 330 165 263C166 239 169 217 174 196Z" fill="#FFFFFF"/>
+  <path d="M159 209C188 140 266 112 342 142C322 88 276 67 227 79C181 90 147 134 141 192C151 193 157 199 159 209Z" fill="#0B2239"/>
+  <path d="M141 219C170 150 231 121 294 126C256 99 197 108 162 155C140 185 132 229 141 270C143 248 143 231 141 219Z" fill="#5B84B1"/>
+  <path d="M239 249C265 274 313 279 352 249C346 306 315 342 273 343C231 344 199 311 191 270C215 277 233 268 239 249Z" fill="#0B2239"/>
+  <path d="M218 194C249 169 302 168 342 192" stroke="#0B2239" stroke-width="15" stroke-linecap="round"/>
+  <path d="M177 177C201 104 268 69 341 94C315 56 260 43 212 67C174 88 148 131 140 187C154 179 166 176 177 177Z" fill="#5B84B1"/>
+  <path d="M338 181C394 132 441 112 486 124" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+  <path d="M486 124C506 134 511 151 500 166" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="338" cy="181" r="12" fill="#B42318"/>
 </svg>

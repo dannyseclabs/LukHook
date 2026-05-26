@@ -2,16 +2,17 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #003049;
-  --mist: #003049;
-  --ink: #FDF0D5;
-  --channel: #669BBC;
-  --channel-dark: #C1121F;
-  --copper: #C1121F;
-  --copper-light: #780000;
-  --warning: #C1121F;
-  --warning-dark: #780000;
-  --white: #FDF0D5;
+  --paper: #F8FAFC;
+  --mist: #EEF3F7;
+  --ink: #0B2239;
+  --channel: #5B84B1;
+  --channel-dark: #0B2239;
+  --copper: #B42318;
+  --copper-light: #B42318;
+  --warning: #B42318;
+  --warning-dark: #B42318;
+  --sand: #EADFC8;
+  --white: #FFFFFF;
 }
 
 @theme inline {
@@ -24,10 +25,12 @@
   --color-copper-light: var(--copper-light);
   --color-warning: var(--warning);
   --color-warning-dark: var(--warning-dark);
+  --color-sand: var(--sand);
+  --color-white: var(--white);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
-  --shadow-map: 0 24px 70px rgb(0 48 73 / 0.64);
-  --shadow-card: 0 18px 44px rgb(0 48 73 / 0.38);
+  --shadow-map: 0 24px 80px rgb(11 34 57 / 0.14);
+  --shadow-card: 0 18px 42px rgb(11 34 57 / 0.08);
 }
 
 * {
@@ -37,7 +40,7 @@
 html {
   background: var(--paper);
   color: var(--ink);
-  color-scheme: dark;
+  color-scheme: light;
   scroll-padding-top: 88px;
 }
 
@@ -46,9 +49,9 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 8% -8%, rgb(102 155 188 / 0.18), transparent 30rem),
-    radial-gradient(circle at 92% 0%, rgb(193 18 31 / 0.12), transparent 28rem),
-    linear-gradient(180deg, rgb(0 48 73 / 1) 0%, rgb(0 48 73 / 1) 52rem, rgb(0 48 73 / 1) 100%);
+    radial-gradient(circle at 12% -10%, rgb(234 223 200 / 0.62), transparent 28rem),
+    radial-gradient(circle at 86% 4%, rgb(91 132 177 / 0.2), transparent 30rem),
+    linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 48rem, #F8FAFC 100%);
   color: var(--ink);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: 0;
@@ -63,9 +66,9 @@ body::before {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(135deg, rgb(253 240 213 / 0.04) 0 1px, transparent 1px 24px),
-    linear-gradient(180deg, rgb(0 48 73 / 0), rgb(0 48 73 / 0.82));
-  opacity: 0.58;
+    linear-gradient(115deg, rgb(91 132 177 / 0.08) 0 1px, transparent 1px 92px),
+    linear-gradient(25deg, rgb(234 223 200 / 0.38) 0 1px, transparent 1px 118px);
+  opacity: 0.72;
 }
 
 body::after {
@@ -75,8 +78,8 @@ body::after {
   pointer-events: none;
   content: "";
   background:
-    radial-gradient(circle at 18% 22%, rgb(102 155 188 / 0.11), transparent 24rem),
-    radial-gradient(circle at 80% 68%, rgb(253 240 213 / 0.06), transparent 30rem);
+    radial-gradient(circle at 18% 28%, rgb(255 255 255 / 0.78), transparent 22rem),
+    radial-gradient(circle at 82% 76%, rgb(91 132 177 / 0.1), transparent 34rem);
 }
 
 a {
@@ -91,17 +94,17 @@ a {
   z-index: 100;
   min-height: 44px;
   transform: translateY(-140%);
-  border-radius: 8px;
+  border-radius: 999px;
   background: var(--ink);
   padding: 12px 16px;
-  color: var(--paper);
+  color: var(--white);
   font-weight: 800;
   transition: transform 160ms ease;
 }
 
 .skip-link:focus-visible {
   transform: translateY(0);
-  outline: 2px solid var(--ink);
+  outline: 2px solid var(--channel);
   outline-offset: 2px;
 }
 
@@ -121,7 +124,7 @@ select {
 }
 
 select {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 ul,
@@ -139,18 +142,18 @@ li::marker {
 
 .nav-link {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 42px;
   align-items: center;
-  border-radius: 8px;
-  padding: 0 12px;
-  color: rgb(253 240 213 / 0.64);
+  border-radius: 999px;
+  padding: 0 13px;
+  color: rgb(11 34 57 / 0.72);
   font-size: 0.84rem;
   font-weight: 700;
   transition: background-color 180ms ease, color 180ms ease;
 }
 
 .nav-link:hover {
-  background: rgb(102 155 188 / 0.12);
+  background: rgb(91 132 177 / 0.1);
   color: var(--ink);
 }
 
@@ -166,9 +169,9 @@ li::marker {
   flex: 0 0 auto;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgb(102 155 188 / 0.32);
-  border-radius: 8px;
-  background: rgb(0 48 73 / 0.72);
+  border: 1px solid rgb(91 132 177 / 0.2);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.74);
   padding: 0 12px;
   color: var(--ink);
   font-size: 0.85rem;
@@ -177,8 +180,8 @@ li::marker {
 }
 
 .mobile-chip:hover {
-  border-color: rgb(102 155 188 / 0.58);
-  background: rgb(102 155 188 / 0.12);
+  border-color: rgb(91 132 177 / 0.42);
+  background: var(--white);
 }
 
 .eyebrow {
@@ -194,11 +197,11 @@ li::marker {
   min-height: 32px;
   align-items: center;
   gap: 6px;
-  border: 1px solid rgb(102 155 188 / 0.28);
-  border-radius: 8px;
-  background: rgb(102 155 188 / 0.1);
+  border: 1px solid rgb(91 132 177 / 0.18);
+  border-radius: 999px;
+  background: rgb(238 243 247 / 0.88);
   padding: 6px 10px;
-  color: rgb(253 240 213 / 0.78);
+  color: rgb(11 34 57 / 0.76);
   font-size: 0.78rem;
   font-weight: 800;
   line-height: 1.25;
@@ -206,30 +209,31 @@ li::marker {
 
 .surface-card,
 .surface-panel {
-  border: 1px solid rgb(102 155 188 / 0.18);
+  border: 1px solid rgb(91 132 177 / 0.16);
   background:
-    linear-gradient(180deg, rgb(102 155 188 / 0.12), transparent 10rem),
-    rgb(0 48 73 / 0.72);
-  box-shadow: var(--shadow-card), inset 0 1px 0 rgb(253 240 213 / 0.04);
+    linear-gradient(180deg, rgb(255 255 255 / 0.96), rgb(255 255 255 / 0.86)),
+    var(--white);
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgb(255 255 255 / 0.9);
 }
 
 .surface-panel {
   background:
-    linear-gradient(180deg, rgb(102 155 188 / 0.14), transparent 9rem),
-    rgb(0 48 73 / 0.86);
+    linear-gradient(180deg, rgb(255 255 255 / 0.98), rgb(238 243 247 / 0.72)),
+    var(--white);
 }
 
 .surface-soft {
+  border-color: rgb(234 223 200 / 0.8);
   background:
-    linear-gradient(180deg, rgb(253 240 213 / 0.08), transparent 8rem),
-    rgb(0 48 73 / 0.64);
+    linear-gradient(180deg, rgb(255 255 255 / 0.86), rgb(234 223 200 / 0.36)),
+    var(--white);
 }
 
 .surface-danger {
-  border-color: rgb(193 18 31 / 0.24);
+  border-color: rgb(180 35 24 / 0.16);
   background:
-    linear-gradient(180deg, rgb(193 18 31 / 0.12), transparent 9rem),
-    rgb(0 48 73 / 0.72);
+    linear-gradient(180deg, rgb(255 255 255 / 0.95), rgb(180 35 24 / 0.04)),
+    var(--white);
 }
 
 .card-hover {
@@ -242,15 +246,15 @@ li::marker {
 
 .card-hover:hover {
   transform: translateY(-2px);
-  border-color: rgb(102 155 188 / 0.48);
-  box-shadow: 0 22px 58px rgb(0 48 73 / 0.52), inset 0 1px 0 rgb(253 240 213 / 0.06);
+  border-color: rgb(91 132 177 / 0.34);
+  box-shadow: 0 24px 56px rgb(11 34 57 / 0.12), inset 0 1px 0 rgb(255 255 255 / 0.9);
 }
 
 .field-label {
   display: grid;
   gap: 8px;
-  color: rgb(253 240 213 / 0.74);
-  font-size: 0.76rem;
+  color: rgb(11 34 57 / 0.7);
+  font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -258,20 +262,20 @@ li::marker {
 .field-select {
   min-height: 42px;
   width: 100%;
-  border-radius: 8px;
-  border: 1px solid rgb(102 155 188 / 0.24);
-  background: rgb(0 48 73 / 0.8);
-  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgb(91 132 177 / 0.22);
+  background: rgb(255 255 255 / 0.92);
+  padding: 0 14px;
   color: var(--ink);
   font-size: 0.9rem;
   font-weight: 600;
-  box-shadow: inset 0 1px 0 rgb(253 240 213 / 0.04);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8);
   transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .field-select:hover {
-  border-color: rgb(102 155 188 / 0.5);
-  background: rgb(102 155 188 / 0.1);
+  border-color: rgb(91 132 177 / 0.45);
+  background: var(--white);
 }
 
 .field-select:focus-visible {
@@ -282,11 +286,11 @@ li::marker {
 
 .bg-hero {
   background:
-    linear-gradient(90deg, rgb(102 155 188 / 0.16) 1px, transparent 1px),
-    linear-gradient(0deg, rgb(253 240 213 / 0.08) 1px, transparent 1px),
-    radial-gradient(circle at 76% 22%, rgb(193 18 31 / 0.24), transparent 18rem),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23003049'/%3E%3Cpath d='M735 0c-47 80-23 130-74 191-54 65-140 51-196 120-65 80-14 165-79 241-54 64-148 55-208 119-33 35-48 78-58 129h1080V0H735z' fill='%23669BBC' opacity='.3'/%3E%3Cpath d='M0 575c120-77 200-51 309-104 123-60 137-161 262-192 129-32 196 51 321 4 72-27 116-86 150-138v655H0V575z' fill='%23669BBC' opacity='.16'/%3E%3Cpath d='M820 91c69 36 101 87 95 151-6 67-50 100-42 161 10 73 83 96 80 160-2 49-48 86-93 111' fill='none' stroke='%23FDF0D5' stroke-width='4' stroke-linecap='round' opacity='.25'/%3E%3Cpath d='M166 646c74-42 136-61 205-61 76 0 122 26 190 16 82-12 115-66 183-72 46-5 89 14 130 48' fill='none' stroke='%23C1121F' stroke-width='6' stroke-linecap='round' opacity='.42'/%3E%3C/svg%3E");
-  background-size: 56px 56px, 56px 56px, auto, cover;
+    linear-gradient(90deg, rgb(91 132 177 / 0.1) 1px, transparent 1px),
+    linear-gradient(0deg, rgb(91 132 177 / 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 74% 14%, rgb(234 223 200 / 0.74), transparent 18rem),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23F8FAFC'/%3E%3Cpath d='M85 552c101-80 195-89 302-49 112 42 219 22 319-55 84-65 172-89 294-71' fill='none' stroke='%235B84B1' stroke-width='4' stroke-linecap='round' opacity='.18'/%3E%3Cpath d='M58 640c132-65 242-63 353 7 98 61 203 64 311 8 105-54 220-52 350 8' fill='none' stroke='%23EADFC8' stroke-width='8' stroke-linecap='round' opacity='.55'/%3E%3Cpath d='M775 76c-62 82-66 149-14 202 51 53 49 119-6 198-37 54-42 105-14 154' fill='none' stroke='%230B2239' stroke-width='3' stroke-linecap='round' opacity='.08'/%3E%3Cpath d='M122 156c94 6 159 35 195 87 40 58 103 87 189 88 89 1 151 31 188 91' fill='none' stroke='%235B84B1' stroke-width='3' stroke-linecap='round' opacity='.12'/%3E%3C/svg%3E");
+  background-size: 60px 60px, 60px 60px, auto, cover;
   background-position: center;
 }
 
@@ -303,13 +307,11 @@ li::marker {
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  border-radius: 12px;
-  border: 1px solid rgb(102 155 188 / 0.38);
-  background:
-    linear-gradient(180deg, rgb(102 155 188 / 0.12), transparent),
-    var(--paper);
+  border-radius: 16px;
+  border: 1px solid rgb(91 132 177 / 0.18);
+  background: var(--white);
   color: var(--ink);
-  box-shadow: 0 16px 48px rgb(0 48 73 / 0.72);
+  box-shadow: 0 18px 44px rgb(11 34 57 / 0.14);
 }
 
 .leaflet-popup-content {
@@ -320,16 +322,16 @@ li::marker {
 }
 
 .leaflet-popup-content a {
-  color: var(--ink);
+  color: var(--copper);
   font-weight: 800;
 }
 
 .map-marker,
 .marker-dot {
   display: inline-block;
-  border: 3px solid rgb(253 240 213 / 0.9);
+  border: 3px solid var(--white);
   border-radius: 999px;
-  box-shadow: 0 8px 24px rgb(0 48 73 / 0.78);
+  box-shadow: 0 8px 22px rgb(11 34 57 / 0.18);
 }
 
 .map-marker {
@@ -357,18 +359,18 @@ li::marker {
 }
 
 .leaflet-tile {
-  filter: grayscale(1) saturate(0.7) sepia(0.22) hue-rotate(156deg) brightness(0.62) contrast(1.18);
+  filter: saturate(0.86) sepia(0.08) hue-rotate(170deg) brightness(1.04) contrast(0.9);
 }
 
 .leaflet-control-zoom a {
-  background: rgb(0 48 73 / 0.9) !important;
-  border-color: rgb(102 155 188 / 0.42) !important;
+  background: var(--white) !important;
+  border-color: rgb(91 132 177 / 0.22) !important;
   color: var(--ink) !important;
 }
 
 .leaflet-control-attribution {
-  background: rgb(0 48 73 / 0.78) !important;
-  color: rgb(253 240 213 / 0.72) !important;
+  background: rgb(255 255 255 / 0.78) !important;
+  color: rgb(11 34 57 / 0.62) !important;
 }
 
 .leaflet-control-attribution a {
